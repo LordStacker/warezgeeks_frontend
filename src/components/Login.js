@@ -8,9 +8,14 @@ const Login = () => {
     const HandleChange = (e) =>{
         setLoginData({ ...LoginData, [e.target.name]: e.target.value });
     } 
+
+    const onSubmit = (e) =>{
+        e.preventDefault();
+        console.log("Testing");
+    }
     return <div className="container">
         <div className="bodyshape mx-auto mt-auto">
-            <form className="row needs-validation mx-auto login-form" noValidate>
+            <form className="row needs-validation mx-auto login-form" noValidate onSubmit={onSubmit}>
                 <div className="row">
                     <div className="col-md-10 mb-2 mx-auto">
                         <label className="form-label">Email</label>
