@@ -42,7 +42,7 @@ const Login = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-12 mb-2">
-                        <Link className="btn btn-primary rounded-pill" to="/">Forgot Password</Link>
+                        <Link className="btn btn-primary rounded-pill " to="/">Forgot Password</Link>
                     </div>
                 </div>
             </form>
