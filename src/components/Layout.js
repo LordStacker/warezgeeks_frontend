@@ -3,6 +3,8 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Login from "../views/Login"
 import Navbar from "./Navbar";
 import Home from "../views/Home";
+import injectContext from '../store/appContext';
+import RegisterAlumn from "../views/Register_Alumn";
 
 const Layout = () => {
   return (
@@ -11,6 +13,9 @@ const Layout = () => {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/register/">
+            <RegisterAlumn/>
           </Route>
           <Route path="/Login">
             <Login />
@@ -21,4 +26,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default injectContext(Layout);

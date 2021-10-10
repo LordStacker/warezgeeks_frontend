@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <div className="row">
                 <div className="col-md-12">
-                    <img src={baner} class="img-fluid" alt="Responsive image" />
+                    <img src={baner} className="img-fluid" alt="Responsive image" />
                 </div>
             </div>
             <h1>Hello and welcome to Warez Geeks</h1>

@@ -1,20 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import '../styles/login.css';
 import { Link } from "react-router-dom";
+
 const Login = () => {
     const [User, setUser] = useState({
         email: "",
         password: "",
     });
-
-    const API = 'http://localhost:8080/'
     const HandleChange = (e) => {
         setUser({ ...User, [e.target.name]: e.target.value });
     }
 
     const onSubmit = (e) => {
+        fetch("http://localhost:8080/login", {
+            method: "POST",
+            header: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: User.email,
+                password: User.password
+            })
+        })
+            .then(resp => {
+                if (resp.status === 200) return resp.json();
+                else alert("There was a mistake")
+            })
+            .then()
+            .catch(error => {
+                console.error("there was an error!!", error);
+            })
         e.preventDefault();
-        console.log(User)
     }
     return <div className="container p-2">
         <div className="bodyshape mx-auto mt-auto">
@@ -37,7 +53,7 @@ const Login = () => {
                         <button className="btn btn-primary rounded-pill" type="submit">Login</button>
                     </div>
                     <div className="col-md-6 mb-2">
-                        <Link className="btn btn-primary rounded-pill" to="/">register</Link>
+                        <Link className="btn btn-primary rounded-pill" to="/register/">register</Link>
                     </div>
                 </div>
                 <div className="row">
