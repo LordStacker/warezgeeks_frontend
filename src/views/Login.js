@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../styles/login.css';
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
         })
             .then(resp => {
                 if (resp.status === 200) {
-                    history.push('/')
+                    history.push('/dash/')
                     return resp.json();
                 }
                 else alert("There was a mistake")

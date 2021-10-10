@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Home from "../views/Home";
 import injectContext from '../store/appContext';
 import RegisterAlumn from "../views/Register_Alumn";
+import Dashboard from "../views/Dashboard";
 
 const Layout = () => {
   return (
@@ -16,6 +17,9 @@ const Layout = () => {
           </Route>
           <Route path="/register/">
             <RegisterAlumn/>
+          </Route>
+          <Route path="/dash/">
+            <Dashboard/>
           </Route>
           <Route path="/Login">
             <Login />
