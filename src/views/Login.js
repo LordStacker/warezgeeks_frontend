@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import '../styles/login.css';
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
+
 
 const Login = () => {
     const [User, setUser] = useState({
         email: "",
         password: "",
     });
+    const history = useHistory();
     const HandleChange = (e) => {
         setUser({ ...User, [e.target.name]: e.target.value });
     }
@@ -15,7 +17,7 @@ const Login = () => {
         e.preventDefault();
         fetch("http://localhost:8080/login", {
             method: "POST",
-            header: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -25,11 +27,11 @@ const Login = () => {
         })
             .then(resp => {
                 if (resp.status === 200) {
+                    history.push('/')
                     return resp.json();
                 }
                 else alert("There was a mistake")
             })
-            .then()
             .catch(error => {
                 console.error("there was an error!!", error);
             })
