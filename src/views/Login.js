@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../styles/login.css';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 const Login = () => {
     const [User, setUser] = useState({
@@ -12,6 +12,7 @@ const Login = () => {
     }
 
     const onSubmit = (e) => {
+        e.preventDefault();
         fetch("http://localhost:8080/login", {
             method: "POST",
             header: {
@@ -23,14 +24,16 @@ const Login = () => {
             })
         })
             .then(resp => {
-                if (resp.status === 200) return resp.json();
+                if (resp.status === 200) {
+                    return resp.json();
+                }
                 else alert("There was a mistake")
             })
             .then()
             .catch(error => {
                 console.error("there was an error!!", error);
             })
-        e.preventDefault();
+
     }
     return <div className="container p-2">
         <div className="bodyshape mx-auto mt-auto">

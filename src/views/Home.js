@@ -1,16 +1,18 @@
 import React from "react";
 import baner from '../img/baner.png';
-import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
         <>
-            <div className="row">
+            <div className="row backgroundimg ">
                 <div className="col-md-12">
                     <img src={baner} className="img-fluid" alt="Responsive image" />
                 </div>
             </div>
-            <h1>Hello and welcome to Warez Geeks</h1>
+            <div className="col-md-12 d-flex align-items-center">
+                <h1>Welcome to Warez Geeks</h1>
+            </div>
+
         </>
     )
 }
