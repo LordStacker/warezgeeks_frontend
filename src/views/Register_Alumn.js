@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import banner from '../img/banner.png';
 import anom from '../img/anom.png';
 import { useHistory } from "react-router-dom";
 
 const RegisterAlumn = () => {
+    const { store, actions } = useContext(Context);
     const [Profile, setProfile] = useState({
         full_name: "",
         last_name: "",
