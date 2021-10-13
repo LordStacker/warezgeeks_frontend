@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 
 
 const Login = () => {
-    const { store, actions } = useContext(Context);
+    //const { store, actions } = useContext(Context);
     const [User, setUser] = useState({
         email: "",
         password: "",
