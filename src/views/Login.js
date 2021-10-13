@@ -1,15 +1,18 @@
 import React, { useState, useContext } from "react";
 import '../styles/login.css';
 import { Link, useHistory } from "react-router-dom";
-
+import { Context } from "../store/appContext";
 
 const Login = () => {
-    //const { store, actions } = useContext(Context);
+    const { store, actions } = useContext(Context);
     const [User, setUser] = useState({
         email: "",
         password: "",
     });
     const history = useHistory();
+    const UserData = (infoUser) => {
+        localStorage.setItem("LoginState", JSON.stringify(infoUser))
+    }
     const HandleChange = (e) => {
         setUser({ ...User, [e.target.name]: e.target.value });
     }
@@ -32,6 +35,11 @@ const Login = () => {
                     return resp.json();
                 }
                 else alert("There was a mistake")
+            })
+            .then((data) => {
+                UserData(data);
+                actions.setInfo(data);
+                console.log(store)
             })
             .catch(error => {
                 console.error("there was an error!!", error);

@@ -3,6 +3,7 @@ import banner from '../img/banner.png';
 import anom from '../img/anom.png';
 import { useHistory } from "react-router-dom";
 
+
 const RegisterAlumn = () => {
     const [Profile, setProfile] = useState({
         full_name: "",
