@@ -3,11 +3,16 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Login from "../views/Login"
 import Navbar from "./Navbar";
 import Home from "../views/Home";
-import RegisterAlumn from "../views/Register_Alumn";
+import Register from "../views/Register";
 import Dashboard from "../views/Dashboard";
+import TeacherAvailability from "../views/TeacherAvailability";
 
 
 const Layout = () => {
+  //<Route path="/teacher/availability">
+           // <TeacherAvailability/>
+         // </Route>
+
   return (
     <Router>
       <Navbar />
@@ -16,7 +21,7 @@ const Layout = () => {
             <Home />
           </Route>
           <Route path="/register/">
-            <RegisterAlumn/>
+            <Register/>
           </Route>
           <Route path="/dash/">
             <Dashboard/>

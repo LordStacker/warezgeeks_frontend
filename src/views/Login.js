@@ -16,40 +16,10 @@ const Login = () => {
     const HandleChange = (e) => {
         setUser({ ...User, [e.target.name]: e.target.value });
     }
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        fetch("http://localhost:8080/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email: User.email,
-                password: User.password
-            })
-        })
-            .then(resp => {
-                if (resp.status === 200) {
-                    history.push('/dash/')
-                    return resp.json();
-                }
-                else alert("There was a mistake")
-            })
-            .then((data) => {
-                UserData(data);
-                actions.setInfo(data);
-                console.log(store)
-            })
-            .catch(error => {
-                console.error("there was an error!!", error);
-            })
-
-    }
     return <div className="container p-2">
         <div className="bodyshape mx-auto mt-auto">
             <h2>Login User</h2>
-            <form className="row needs-validation mx-auto login-form" noValidate onSubmit={onSubmit}>
+            <form className="row needs-validation mx-auto login-form" noValidate onSubmit={(e) => actions.onSumbitLogin(e, User, history)}>
                 <div className="row">
                     <div className="col-md-10 mb-2 mx-auto">
                         <div className="input-group has-validation">
