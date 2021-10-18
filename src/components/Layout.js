@@ -10,27 +10,30 @@ import TeacherAvailability from "../views/TeacherAvailability";
 
 const Layout = () => {
   //<Route path="/teacher/availability">
-           // <TeacherAvailability/>
-         // </Route>
+  // <TeacherAvailability/>
+  // </Route>
 
   return (
     <Router>
       <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/register/">
-            <Register/>
-          </Route>
-          <Route path="/dash/">
-            <Dashboard/>
-          </Route>
-          <Route path="/Login">
-            <Login />
-          </Route>
-          <Route render={() => <h1>Not found</h1>}></Route>
-        </Switch>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/register/">
+          <Register />
+        </Route>
+        <Route path="/dash/">
+          <Dashboard />
+        </Route>
+        <Route path="/teacher/availability">
+          <TeacherAvailability />
+        </Route>
+        <Route path="/Login">
+          <Login />
+        </Route>
+        <Route render={() => <h1>Not found</h1>}></Route>
+      </Switch>
     </Router>
   );
 };
