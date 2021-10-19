@@ -70,7 +70,7 @@ const Register = () => {
                             <label for="Last Name" className="form-label">knowledge</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" onChange={HandleChange} name="knowledge" value={profile.knowledge} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary rounded-pill">Submit</button>
                     </form>
                 </div>
             </div>

@@ -10,9 +10,9 @@ const Login = () => {
         password: "",
     });
     const history = useHistory();
-    const UserData = (infoUser) => {
-        localStorage.setItem("LoginState", JSON.stringify(infoUser))
-    }
+    //const UserData = (infoUser) => {
+     //   localStorage.setItem("LoginState", JSON.stringify(infoUser))
+    //}
     const HandleChange = (e) => {
         setUser({ ...User, [e.target.name]: e.target.value });
     }
