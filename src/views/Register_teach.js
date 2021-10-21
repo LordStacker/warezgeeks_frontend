@@ -3,12 +3,13 @@ import banner from '../img/banner.png';
 import anom from '../img/anom.png';
 import { useHistory } from "react-router-dom";
 
-const RegisterAlumn = () => {
+const RegisterTeacher = () => {
     const [Profile, setProfile] = useState({
         full_name: "",
         last_name: "",
         email: "",
-        password: ""
+        password: "",
+        knowledge: ""
 
     });
     const history = useHistory();
@@ -27,6 +28,7 @@ const RegisterAlumn = () => {
                 last_name: Profile.last_name,
                 email: Profile.email,
                 password: Profile.password,
+                knowledge: Profile.knowledge,
             })
         }).then(resp => {
             if (resp.status === 200) {
@@ -68,14 +70,18 @@ const RegisterAlumn = () => {
                             <input type="password" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password" onChange={HandleChange} value={Profile.password} />
                         </div>
                         <div className="mb-3">
-                            <div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    User
+                            <label for="Pass" className="form-label">Knowledge</label>
+                            <input type="knowledge" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password" onChange={HandleChange} value={Profile.password} />
+                        </div>
+                        <div className="mb-3">
+                            <div className="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    User Type
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <button className="dropdown-item" type="button">Alumn</button>
-                                    <button className="dropdown-item" type="button">Teacher</button>
-                                </div>
+                                <ul className="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <li><a className="dropdown-item" href="#">Alumn</a></li>
+                                    <li><a className="dropdown-item" href="#">Teacher</a></li>
+                                </ul>
                             </div>
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
@@ -86,4 +92,4 @@ const RegisterAlumn = () => {
     )
 }
 
-export default RegisterAlumn;
+export default RegisterTeacher;
