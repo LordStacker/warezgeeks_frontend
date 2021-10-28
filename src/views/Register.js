@@ -25,11 +25,11 @@ const Register = () => {
     return (
         <>
             <div className="col-md-12">
-                <img src={banner} className="img-fluid" alt="Responsive image" />
+                <img src={banner} className="img-fluid" alt="Responsive img" />
             </div>
             <div className="row">
                 <div className="col-md-2 p-2">
-                    <img src={anom} className="img-thumbnail rounded-circle" alt="Responsive image" />
+                    <img src={anom} className="img-thumbnail rounded-circle" alt="Responsive img" />
                 </div>
                 <div className="col-md-6">
                     <form onSubmit={(e) => actions.onSubmitRegister(e, profile, history)}>
