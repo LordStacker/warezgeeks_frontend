@@ -8,7 +8,8 @@ import Dashboard from "../views/Dashboard";
 import TeacherAvailability from "../views/TeacherAvailability";
 import NewRegister from "../views/New_Register";
 import Documentation from "./Documentation";
-
+import TeacherProfile from "../views/Teacher_Profile";
+import TeacherRequest from "../views/Teacher_Request";
 
 
 const Layout = () => {
@@ -34,6 +35,12 @@ const Layout = () => {
         </Route>
         <Route path="/teacher/availability">
           <TeacherAvailability />
+        </Route>
+        <Route path="/teacher/profile">
+          <TeacherProfile />
+        </Route>
+        <Route path="/teacher/request">
+          <TeacherRequest />
         </Route>
         <Route path="/documentation">
           <Documentation />
