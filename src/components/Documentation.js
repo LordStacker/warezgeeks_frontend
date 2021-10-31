@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const Documentation = () => {
   return (
@@ -9,7 +10,7 @@ const Documentation = () => {
             <div className="card-body">
               <h5 className="card-title">HTML</h5>
               <p className="card-text">--------</p>
-              <a to="#" className="btn btn-primary">Ir a documentacion</a>
+              <Link to="#" className="btn btn-primary">Ir a documentacion</Link>
             </div>
           </div>
         </div>
@@ -18,7 +19,7 @@ const Documentation = () => {
             <div className="card-body">
               <h5 className="card-title">CSS</h5>
               <p className="card-text">--------</p>
-              <a to="#" className="btn btn-primary">Ir a documentacion</a>
+              <Link to="#" className="btn btn-primary">Ir a documentacion</Link>
             </div>
           </div>
         </div>
@@ -27,7 +28,7 @@ const Documentation = () => {
             <div className="card-body">
               <h5 className="card-title">Javascript</h5>
               <p className="card-text">--------</p>
-              <a to="#" className="btn btn-primary">Ir a documentacion</a>
+              <Link to="#" className="btn btn-primary">Ir a documentacion</Link>
             </div>
           </div>
         </div>
@@ -36,7 +37,7 @@ const Documentation = () => {
             <div className="card-body">
               <h5 className="card-title">React</h5>
               <p className="card-text">--------</p>
-              <a to="#" className="btn btn-primary">Ir a documentacion</a>
+              <Link to="#" className="btn btn-primary">Ir a documentacion</Link>
             </div>
           </div>
         </div>
@@ -45,7 +46,7 @@ const Documentation = () => {
             <div className="card-body">
               <h5 className="card-title">MySQL</h5>
               <p className="card-text">--------</p>
-              <a to="#" className="btn btn-primary">Ir a documentacion</a>
+              <Link to="#" className="btn btn-primary">Ir a documentacion</Link>
             </div>
           </div>
         </div>
@@ -54,7 +55,7 @@ const Documentation = () => {
             <div className="card-body">
               <h5 className="card-title">Flask</h5>
               <p className="card-text">--------</p>
-              <a to="#" className="btn btn-primary">Ir a documentacion</a>
+              <Link to="#" className="btn btn-primary">Ir a documentacion</Link>
             </div>
           </div>
         </div>

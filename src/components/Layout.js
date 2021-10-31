@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Home from "../views/Home";
 import Register from "../views/Register";
 import Dashboard from "../views/Dashboard";
-import TeacherAvailability from "../views/TeacherAvailability";
+import TeacherAvailability from "../views/Teacher_Availability";
 import NewRegister from "../views/New_Register";
 import Documentation from "./Documentation";
 import TeacherProfile from "../views/Teacher_Profile";
