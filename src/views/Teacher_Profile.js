@@ -9,11 +9,9 @@ const TeacherProfile = () => {
                     <img src="http://lorempixel.com/400/200" className="img-thumbnail" alt="..." />
                     <h5>Nombre</h5>
                     <div className="d-flex justify-content-between">
-                        
                         <Link role="button" className="d-inline p-2 btn btn-danger" to="/teacher/request">Solicitudes</Link>
                         <Link role="button" className="d-inline p-2 btn btn-danger" to="/teacher/availability">Agendar</Link>
                         <button type="button" className="d-inline p-2 btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="contacto@warezgeeks.cl">Contactanos</button>
-
                         <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog">
                                 <div className="modal-content">
@@ -45,6 +43,22 @@ const TeacherProfile = () => {
                 <div className="col-md-1"></div>
                 <form>
                     <div className="mb-3">
+                        <label htmlFor="exampleFormControlInput1" className="form-label">Nombre</label>
+                        <input type="name" className="form-control" id="exampleFormControlInput1" placeholder="John" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="exampleFormControlInput1" className="form-label">Apellido</label>
+                        <input type="lastName" className="form-control" id="exampleFormControlInput1" placeholder="Doe" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="exampleFormControlInput1" className="form-label">Usuario</label>
+                        <input type="user" className="form-control" id="exampleFormControlInput1" placeholder="Raccon95" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="exampleFormControlInput1" className="form-label">Telefono</label>
+                        <input type="phone" className="form-control" id="exampleFormControlInput1" placeholder="9 9999 9999" />
+                    </div>
+                    <div className="mb-3">
                         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
@@ -52,10 +66,6 @@ const TeacherProfile = () => {
                     <div className="mb-3">
                         <label hymlFor="exampleInputPassword1" className="form-label">Password</label>
                         <input type="password" className="form-control" id="exampleInputPassword1" />
-                    </div>
-                    <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
