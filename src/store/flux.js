@@ -41,7 +41,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
             },
             onSubmitRegister: (e, profile, history) => {
                 e.preventDefault();
-                fetch("http://localhost:8080/profile", {
+                fetch("http://localhost:8080/register", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     if (resp.status === 200) {
                         alert("Account Created")
                         history.push('/dash/')
-                        return resp.json();
+                    return resp.json();
                     }
                     else alert("There was a mistake")
                 })
