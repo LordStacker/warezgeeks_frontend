@@ -5,7 +5,11 @@ import Navbar from "./Navbar";
 import Home from "../views/Home";
 import Register from "../views/Register";
 import Dashboard from "../views/Dashboard";
-import TeacherAvailability from "../views/TeacherAvailability";
+import TeacherAvailability from "../views/Teacher_Availability";
+import NewRegister from "../views/New_Register";
+import Documentation from "./Documentation";
+import TeacherProfile from "../views/Teacher_Profile";
+import TeacherRequest from "../views/Teacher_Request";
 
 
 const Layout = () => {
@@ -23,11 +27,23 @@ const Layout = () => {
         <Route path="/register/">
           <Register />
         </Route>
+        <Route path="/newRegister/">
+          <NewRegister/>
+        </Route>
         <Route path="/dash/">
           <Dashboard />
         </Route>
         <Route path="/teacher/availability">
           <TeacherAvailability />
+        </Route>
+        <Route path="/teacher/profile">
+          <TeacherProfile />
+        </Route>
+        <Route path="/teacher/request">
+          <TeacherRequest />
+        </Route>
+        <Route path="/documentation">
+          <Documentation />
         </Route>
         <Route path="/Login">
           <Login />
