@@ -140,9 +140,6 @@ const NewRegister = () => {
                                 </div>
                             </div>
                         </div>
-                    </Form>
-                )}
-            </Formik>
         </>
     )
 }
