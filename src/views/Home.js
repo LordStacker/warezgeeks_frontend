@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <div className="row backgroundimg ">
                 <div className="col-md-12">
-                    <img src={banner} className="img-fluid" alt="Responsive img" style={{ width: "90rem"}} />
+                    <img src={banner} style={{ width: "90rem" }}className="img-fluid" alt="Responsive img" style={{ width: "90rem"}} />
                 </div>
             </div>
             <div className="jumbotron container">
@@ -18,7 +18,7 @@ const Home = () => {
                 <div className="d-flex justify-content-center"><p>Ingresa o registrate como estudiante o tutor.</p></div>
                 <div className="d-grid gap-2 d-md-flex justify-content-center">
                     <Link className="col-md-2 p-2 btn btn-primary btn-lg" to="/login" role="button">Ingresar</Link>
-                    <Link className="col-md-2 p-2 btn btn-primary btn-lg" to="/newRegister" role="button">Registrarse</Link>
+                    <Link className="col-md-2 p-2 btn btn-primary btn-lg" to="/register/" role="button">Registrarse</Link>
                 </div>
             </div>
         </>
