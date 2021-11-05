@@ -39,7 +39,7 @@ const Layout = () => {
         <Route path="/teacher/request">
           <TeacherRequest />
         </Route>
-        <PrivateRoute path="/documentation" component={<Documentation/>}/>
+        <PrivateRoute path="/documentation" component={()=> <Documentation/> }/>
         <Route path="/Login">
           <Login />
         </Route>
