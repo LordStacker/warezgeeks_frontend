@@ -6,7 +6,10 @@ const TeacherAvailability = () => {
     const [availability, setAvailability] = useState([])
     const Calendar = CalendarTemplate({
         availability,
-        setAvailability,
+        setAvailability: (update) =>{
+            console.log(update)
+            setAvailability(update)
+        },
         startTime: "11:00",
         endTime: "20:00"
     })

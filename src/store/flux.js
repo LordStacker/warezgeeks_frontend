@@ -2,6 +2,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
     return {
         store: {
             infoUser: {},
+            isAuth: localStorage.getItem("isAuth")
         },
         actions: {
             setInfo: (data) => {
