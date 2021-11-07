@@ -1,7 +1,6 @@
 export const getState = ({ setStore, getStore, getActions }) => {
     return {
         store: {
-            infoUser: {},
             isAuth: localStorage.getItem("isAuth")
         },
         actions: {
@@ -20,13 +19,13 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         password: User.password
                     })
                 })
-                    .then(resp => {
-                        if (resp.status === 200)
-                            history.push('/dash/')
-                        return resp.json();
-                    })
+                    .then(resp => resp.json())
                     .then((data) => {
-
+                        if(data.msg === "Logged in succesfully"){
+                            localStorage.setItem("isAuth", JSON.stringify(true))
+                            localStorage.setItem("access_token", JSON.stringify(data.access_token))
+                            history.push('/dash/')
+                        }
                         if (typeof data == 'object') {
                             console.log(data)
                             alert(data["msg"])
