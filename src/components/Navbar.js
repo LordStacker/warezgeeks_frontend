@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-
+import '../styles/logout.css';
 
 const Navbar = () => {
   const history = useHistory();
@@ -29,8 +29,8 @@ const Navbar = () => {
                 <li className="nav-item">
                   <Link className="nav-link active" aria-current="page" to="/">Contact Us</Link>
                 </li>
-                <li>
-                  <button onClick={logOut}>Log out</button>
+                <li className="nav-item logout">
+                  <button className="btn btn-primary rounded-pill" onClick={logOut}>Log out</button>
                 </li>
               </>
                 
