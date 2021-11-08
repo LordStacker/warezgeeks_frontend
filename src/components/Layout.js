@@ -27,19 +27,23 @@ const Layout = () => {
         <Route path="/register/">
           <Register />
         </Route>
-        <Route path="/dash/">
-          <Dashboard />
+        <PrivateRoute path="/dash/" component={() => <Dashboard />} />
+        <Route path="/Login">
+          <Login />
         </Route>
-        <Route path="/teacher/availability">
-          <TeacherAvailability />
+        <PrivateRoute path="/teacher/availability" component={() => <TeacherAvailability />} />
+        <Route path="/Login">
+          <Login />
         </Route>
-        <Route path="/teacher/profile">
-          <TeacherProfile />
+        <PrivateRoute path="/teacher/profile" component={() => <TeacherProfile />} />
+        <Route path="/Login">
+          <Login />
         </Route>
-        <Route path="/teacher/request">
-          <TeacherRequest />
+        <PrivateRoute path="/teacher/request" component={() => <TeacherRequest />} />
+        <Route path="/Login">
+          <Login />
         </Route>
-        <PrivateRoute path="/documentation" component={()=> <Documentation/> }/>
+        <PrivateRoute path="/documentation" component={() => <Documentation />} />
         <Route path="/Login">
           <Login />
         </Route>
