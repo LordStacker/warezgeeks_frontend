@@ -21,7 +21,7 @@ const Navbar = () => {
               localStorage.getItem("isAuth") ?
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link active" aria-current="page" to="/dash/">Ple</Link>
+                    <Link className="nav-link active" aria-current="page" to="/dash/">Profile</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="/">Contact Us</Link>
