@@ -3,6 +3,9 @@ export const getState = ({ setStore, getStore, getActions }) => {
         store: {
             isAuth: localStorage.getItem("isAuth"),
             Documents: [],
+            document: null,
+            isAuth: false,
+            access_token: null
         },
         actions: {
             setInfo: (data) => {
@@ -25,7 +28,11 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         if (data.msg === "Logged in succesfully") {
                             localStorage.setItem("isAuth", JSON.stringify(true))
                             localStorage.setItem("access_token", JSON.stringify(data.access_token))
-                            history.push('/dash/')
+                            setStore({
+                                isAuth: true,
+                                access_token: data.access_token
+                            })
+                            history.push('/dash')
                         }
                         if (typeof data == 'object') {
                             console.log(data)
@@ -39,6 +46,20 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     .catch(error => {
                         console.error(error);
                     })
+            },
+            checkAuth: () =>{
+                if(localStorage.getItem("isAuth")){
+                    setStore({
+                        isAuth: JSON.parse(localStorage.getItem("isAuth")),
+                        access_token: JSON.parse(localStorage.getItem("access_token"))
+                    })
+                }
+            },
+            logOut: () =>{
+                setStore({
+                    isAuth: false,
+                    access_token: null
+                })
             },
             onSubmitRegister: (e, profile, history) => {
                 e.preventDefault();
@@ -76,7 +97,15 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     headers: { "Content-Type": "application/json" }
                 }).then(response => response.json())
                     .then(data => setStore({ Documents: data }))
+            },
+            getDocumentationById: (id) => {
+                fetch("http://localhost:8080/documentation/"+ id , {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" }
+                }).then(response => response.json())
+                    .then(data => setStore({ document: data }))
             }
+
         }
     }
 }

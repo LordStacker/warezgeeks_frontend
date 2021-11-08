@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 import '../styles/logout.css';
 
 const Navbar = () => {
   const history = useHistory();
+  let { store, actions } = useContext(Context);
   const logOut = () => {
     localStorage.clear()
+    actions.logOut()
     history.push("/")
   }
   return (
@@ -18,7 +21,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             {
-              localStorage.getItem("isAuth") ?
+              store.isAuth ?
                 <>
                   <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="/dash/">Profile</Link>

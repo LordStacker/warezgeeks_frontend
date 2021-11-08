@@ -10,13 +10,13 @@ const JumbotronDocs = (props) => {
     const params = useParams();
 
     useEffect(() => {
-        actions.getDetailDocuments(params.id);
+        actions.getDocumentationById(params.id);
     }, [])
     return (
         <div className="container">
             <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">
                 <div className="col-md-6 px-0">
-                    <h1 className="fst-italic">{store.details.info}</h1>
+                    <h1 className="fst-italic">{!!store.document && store.document.info}</h1>
                     <Link to="/documentation">Go back</Link>
                 </div>
             </div>

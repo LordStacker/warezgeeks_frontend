@@ -18,7 +18,7 @@ const CardDocumentation = (props) => {
                         <p className="card-text">
                             Concept: {props.data.intro}
                         </p>
-                        <Link to="/documentation" className="btn btn-primary">More info here!</Link>
+                        <Link to={"/documentation/"+ props.data.id + "/detail"} className="btn btn-primary">More info here!</Link>
                     </div>
                 </div>
             </div>

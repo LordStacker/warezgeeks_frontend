@@ -28,7 +28,7 @@ const Layout = () => {
         <Route path="/register/">
           <Register />
         </Route>
-        <PrivateRoute path="/dash/" component={() => <Dashboard />} />
+        <PrivateRoute path="/dash" component={() => <Dashboard />} />
         <Route path="/Login">
           <Login />
         </Route>
@@ -44,9 +44,13 @@ const Layout = () => {
         <Route path="/Login">
           <Login />
         </Route>
-        <Route path="/documentation">
-        <Documentation />
+        <Route path="/documentation/:id/detail" component={() => <JumbotronDocs />}>
+          <JumbotronDocs />
         </Route>
+        <Route path="/documentation">
+          <Documentation />
+        </Route>
+
         <Route render={() => <h1>Not found</h1>}></Route>
       </Switch>
     </Router>
