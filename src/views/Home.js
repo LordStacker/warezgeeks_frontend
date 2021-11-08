@@ -12,7 +12,7 @@ const Home = () => {
             </div>
             <div className="jumbotron container">
                 <h1 className="display-4 d-flex justify-content-center">Hola Geeks!</h1>
-                <div className="lead d-flex justify-content-center"><p>En Warez Geeks encontraras informaicon que te ayudara en tu camino a la programacion 
+                <div className="lead d-flex justify-content-center"><p>En Warez Geeks encontraras informacion que te ayudara en tu camino a la programacion 
                     asi como tambien tener la posibilidad de conectarte con mentores con otros Geeks como tu.</p></div>
                 <hr className="my-4" />
                 <div className="d-flex justify-content-center"><p>Ingresa o registrate como estudiante o tutor.</p></div>
