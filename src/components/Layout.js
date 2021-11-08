@@ -10,6 +10,7 @@ import Documentation from "./Documentation";
 import TeacherProfile from "../views/Teacher_Profile";
 import TeacherRequest from "../views/Teacher_Request";
 import PrivateRoute from "./Privateroute";
+import JumbotronDocs from "./JumbotronDocs";
 
 
 const Layout = () => {
@@ -43,9 +44,8 @@ const Layout = () => {
         <Route path="/Login">
           <Login />
         </Route>
-        <PrivateRoute path="/documentation" component={() => <Documentation />} />
-        <Route path="/Login">
-          <Login />
+        <Route path="/documentation">
+        <Documentation />
         </Route>
         <Route render={() => <h1>Not found</h1>}></Route>
       </Switch>

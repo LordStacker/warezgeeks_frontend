@@ -1,7 +1,8 @@
 export const getState = ({ setStore, getStore, getActions }) => {
     return {
         store: {
-            isAuth: localStorage.getItem("isAuth")
+            isAuth: localStorage.getItem("isAuth"),
+            Documents: [],
         },
         actions: {
             setInfo: (data) => {
@@ -21,7 +22,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                 })
                     .then(resp => resp.json())
                     .then((data) => {
-                        if(data.msg === "Logged in succesfully"){
+                        if (data.msg === "Logged in succesfully") {
                             localStorage.setItem("isAuth", JSON.stringify(true))
                             localStorage.setItem("access_token", JSON.stringify(data.access_token))
                             history.push('/dash/')
@@ -61,13 +62,20 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     if (resp.status === 200) {
                         alert("Account Created")
                         history.push('/dash/')
-                    return resp.json();
+                        return resp.json();
                     }
                     else alert("There was a mistake")
                 })
                     .catch(error => {
                         console.error("there was an error!!", error);
                     })
+            },
+            getDocumentation: () => {
+                fetch("http://localhost:8080/documentation", {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" }
+                }).then(response => response.json())
+                    .then(data => setStore({ Documents: data }))
             }
         }
     }
