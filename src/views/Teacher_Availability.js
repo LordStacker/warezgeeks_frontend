@@ -1,35 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CalendarTemplate from 'availability-calendar-react';
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const TeacherAvailability = () => {
+    const { store, actions } = useContext(Context);
     const [availability, setAvailability] = useState([])
     const Calendar = CalendarTemplate({
         availability,
-        setAvailability: (update) =>{
+        setAvailability: (update) => {
+            actions.saveDate(update)
             console.log(update)
-            setAvailability(update)
+            setAvailability(availability.concat(update))
+            //concatenar arreglos, savedata(availability), [0][0]
         },
-        startTime: "11:00",
-        endTime: "20:00"
+        start: "11:00",
+        end: "20:00"
     })
+    const [user, setUser] = useState("");
+    useEffect(() => {
+        fetch("http://localhost:8080/me", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${JSON.parse(localStorage.getItem("access_token"))}`
+            },
+            body: JSON.stringify("")
+        })
+            .then(resp => resp.json())
+            .then((data) => {
+                setUser(data.current_user)
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }, [])
 
-//const exampleModal = document.getElementById('exampleModal');
-//  exampleModal.addEventListener('show.bs.modal', function (event) {
-        // Button that triggered the modal
-//const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-//const recipient = button.getAttribute('data-bs-whatever')
-        // If necessary, you could initiate an AJAX request here
-        // and then do the updating in a callback.
-        //
-        // Update the modal's content.
-//const modalTitle = exampleModal.querySelector('.modal-title')
-//const modalBodyInput = exampleModal.querySelector('.modal-body input')
+    //const exampleModal = document.getElementById('exampleModal');
+    //  exampleModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    //const button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    //const recipient = button.getAttribute('data-bs-whatever')
+    // If necessary, you could initiate an AJAX request here
+    // and then do the updating in a callback.
+    //
+    // Update the modal's content.
+    //const modalTitle = exampleModal.querySelector('.modal-title')
+    //const modalBodyInput = exampleModal.querySelector('.modal-body input')
 
-//modalTitle.textContent = 'Envianos tu mensaje'
-//modalBodyInput.value = recipient
-//})
+    //modalTitle.textContent = 'Envianos tu mensaje'
+    //modalBodyInput.value = recipient
+    //})
 
 
     return (
@@ -38,7 +60,7 @@ const TeacherAvailability = () => {
                 <div className="d-flex justify-content-start">
                     <div className="col-md-3">
                         <img src="http://lorempixel.com/400/200" className="img-thumbnail" alt="..." />
-                        <h5>Nombre</h5>
+                        <h5>Nombre {user}</h5>
                         <div className="d-flex justify-content-between">
                             <Link role="button" className="d-inline p-2 btn btn-danger" to="/teacher/profile">Perfil</Link>
                             <Link role="button" className="d-inline p-2 btn btn-danger" to="/teacher/request">Solicitudes</Link>
@@ -65,7 +87,9 @@ const TeacherAvailability = () => {
                                         </div>
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" className="btn btn-primary" onClick="submit">Enviar Mensaje</button>
+                                            <form>
+                                                <button type="button" className="btn btn-primary" onClick="submit">Enviar Mensaje</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
