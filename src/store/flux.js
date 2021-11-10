@@ -106,8 +106,8 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        start: update[update.length-1].start,
-                        end: update[update.length-1].end,
+                        start: update[0].start,
+                        end: update[0].end,
                         id_user: store.user.id
                     })
                 }).then(resp => {
