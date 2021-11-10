@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import '../styles/logout.css';
+//import '../styles/logout.css';
 
 const Navbar = () => {
   const history = useHistory();
@@ -32,8 +32,8 @@ const Navbar = () => {
                   <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="/documentation">Documentacion</Link>
                   </li>
-                  <li className="nav-item logout">
-                    <button className="btn btn-primary rounded-pill" onClick={logOut}>Log out</button>
+                  <li className="nav-item logout ms-auto">
+                    <button className="btn btn-primary rounded-pill " onClick={logOut}>Log out</button>
                   </li>
                   
                 </>
