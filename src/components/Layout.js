@@ -7,8 +7,6 @@ import Register from "../views/Register";
 import Dashboard from "../views/Dashboard";
 import TeacherAvailability from "../views/Teacher_Availability";
 import Documentation from "./Documentation";
-import TeacherProfile from "../views/Teacher_Profile";
-import TeacherRequest from "../views/Teacher_Request";
 import PrivateRoute from "./Privateroute";
 
 
@@ -32,14 +30,6 @@ const Layout = () => {
           <Login />
         </Route>
         <PrivateRoute path="/teacher/availability" component={() => <TeacherAvailability />} />
-        <Route path="/Login">
-          <Login />
-        </Route>
-        <PrivateRoute path="/teacher/profile" component={() => <TeacherProfile />} />
-        <Route path="/Login">
-          <Login />
-        </Route>
-        <PrivateRoute path="/teacher/request" component={() => <TeacherRequest />} />
         <Route path="/Login">
           <Login />
         </Route>

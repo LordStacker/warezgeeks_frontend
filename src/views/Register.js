@@ -3,6 +3,7 @@ import banner from '../img/banner.png';
 import anom from '../img/anom.png';
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import Select from 'react-select';
 
 
 const Register = () => {
@@ -12,7 +13,7 @@ const Register = () => {
         last_name: "",
         email: "",
         password: "",
-        knowledge: "",
+        knowledge: [],
         phone: "",
         question: "",
         answer: "",
@@ -24,6 +25,15 @@ const Register = () => {
         setprofile({ ...profile, [e.target.name]: e.target.value });
         setChecked(!checked)
     }
+
+    const optionKnowledge = [
+        { value: 'HTML', label: 'HTML' },
+        { value: 'CSS', label: 'CSS' },
+        { value: 'Bootstrap', label: 'Bootstrap'},
+        { value: 'React', label: 'React'},
+        { value: 'JavaScript', label: 'JavaScript'},
+        { value: 'Python', label: 'Python'}
+    ]
 
     return (
         <>
@@ -116,6 +126,20 @@ const Register = () => {
                         <p></p>
 
                         </div>
+                        <label htmlFor="knowledge">Conocimientos</label>
+                        <Select
+                            isMulti
+                            className="basic-multi-select"
+                            id="knowledge"
+                            name="knowledge"
+                            placeholder="Seleccione"
+                            options={optionKnowledge}
+                            onChange={(e) => setprofile("knowledge", e)}
+                            checked={!checked}
+                            disabled={checked}
+                            value={profile.knowledge}
+                        />
+
 
                         <button type="submit" className="btn btn-success rounded-pill">Submit</button>
                     </form>
