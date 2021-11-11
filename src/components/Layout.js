@@ -7,8 +7,6 @@ import Register from "../views/Register";
 import Dashboard from "../views/Dashboard";
 import TeacherAvailability from "../views/Teacher_Availability";
 import Documentation from "./Documentation";
-import TeacherProfile from "../views/Teacher_Profile";
-import TeacherRequest from "../views/Teacher_Request";
 import PrivateRoute from "./Privateroute";
 import JumbotronDocs from "./JumbotronDocs";
 
