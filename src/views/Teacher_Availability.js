@@ -16,7 +16,7 @@ const TeacherAvailability = () => {
             //concatenar arreglos, savedata(availability), [0][0]
         },
         start: "11:00",
-        end: "20:00"
+        end: "17:00"
     })
     const [user, setUser] = useState("");
     useEffect(() => {
@@ -58,7 +58,7 @@ const TeacherAvailability = () => {
     return (
         <>
             <div className="container">
-                <div className="d-flex justify-content-start">
+                <div className="d-flex justify-content-start mt-5">
                     <div className="col-md-3">
                         <img src="http://lorempixel.com/400/200" className="img-thumbnail" alt="..." />
                         <h5>Nombre {user}</h5>
