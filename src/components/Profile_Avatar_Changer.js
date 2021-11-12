@@ -49,20 +49,23 @@ class ProfileAvatarChanger extends Component {
             )
         })
         return (
-            <div className="ProfileAvatarChanger">
-                <Button type='primary' onClick={this.showModal}>
-                    Escoge tu avatar
-                </Button>
-                <Modal
-                    title="Selecciona tu avatar"
-                    visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                >
-                    {imageMapper}
-                </Modal>{" "}
-            </div>
+            <>
+                <div className="ProfileAvatarChanger">
+                    <Button type='primary' onClick={this.showModal}>
+                        Escoge tu avatar
+                    </Button>
+                    <Modal
+                        title="Selecciona tu avatar"
+                        visible={this.state.visible}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                    >
+                        {imageMapper}
+                    </Modal>{" "}
+                </div>
+            </>
         );
     }
 }
+
 export default ProfileAvatarChanger;
