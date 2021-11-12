@@ -64,8 +64,6 @@ const TeacherAvailability = () => {
                         <img src="http://lorempixel.com/400/200" className="img-thumbnail" alt="..." />
                         <h5>Nombre {user}</h5>
                         <div className="d-flex justify-content-between">
-                            <Link role="button" className="d-inline p-2 btn btn-danger" to="/teacher/profile">Perfil</Link>
-                            <Link role="button" className="d-inline p-2 btn btn-danger" to="/teacher/request">Solicitudes</Link>
                             <button type="button" className="d-inline p-2 btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="contacto@warezgeeks.cl">Contactanos</button>
 
                             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,37 +110,6 @@ const TeacherAvailability = () => {
                                     </div>
                                 </div>
                             </div>
-                           
-                            <button type="button" className="d-inline p-2 ms-1 btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">
-                                Solicitudes
-                            </button>
-                            <div className="modal" id="myModal">
-                                <div className="modal-dialog">
-                                    <div className="modal-content">
-                                        <div className="modal-header">
-                                            <h4 className="modal-title">Mis Solicitudes</h4>
-                                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="recipient-name" className="col-form-label">Telefono</label>
-                                            <input type="text" className="form-control" id="recipient-name" />
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="recipient-name" className="col-form-label">Telefono</label>
-                                            <input type="text" className="form-control" id="recipient-name" />
-                                        </div>
-                                        <div className="mb-3">
-                                            <label htmlFor="recipient-name" className="col-form-label">Telefono</label>
-                                            <input type="text" className="form-control" id="recipient-name" />
-                                        </div>
-                                       
-                                        <div className="modal-footer">
-                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="button" className="d-inline p-2 ms-1 btn btn-danger">Coontactanos</button>
                         </div>
 
                         
