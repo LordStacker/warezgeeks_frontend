@@ -3,7 +3,7 @@ import banner from '../img/banner.png';
 import anom from '../img/anom.png';
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import Select from 'react-select';
+//import Select from 'react-select';
 
 
 const Register = () => {
@@ -35,6 +35,19 @@ const Register = () => {
         { value: 'Python', label: 'Python'}
     ]
 
+    /*<label htmlFor="knowledge">Conocimientos</label>
+                        <Select
+                            isMulti
+                            className="basic-multi-select"
+                            id="knowledge"
+                            name="knowledge"
+                            placeholder="Seleccione"
+                            options={optionKnowledge}
+                            onChange={(e) => setprofile("knowledge", e)}
+                            checked={!checked}
+                            disabled={checked}
+                            value={profile.knowledge}
+                        />*/
     return (
         <>
             <div className="col-md-12">
@@ -126,19 +139,7 @@ const Register = () => {
                         <p></p>
 
                         </div>
-                        <label htmlFor="knowledge">Conocimientos</label>
-                        <Select
-                            isMulti
-                            className="basic-multi-select"
-                            id="knowledge"
-                            name="knowledge"
-                            placeholder="Seleccione"
-                            options={optionKnowledge}
-                            onChange={(e) => setprofile("knowledge", e)}
-                            checked={!checked}
-                            disabled={checked}
-                            value={profile.knowledge}
-                        />
+                        
 
 
                         <button type="submit" className="btn btn-success rounded-pill">Submit</button>

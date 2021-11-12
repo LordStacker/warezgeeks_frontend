@@ -110,7 +110,6 @@ const TeacherAvailability = () => {
                                     </div>
                                 </div>
                             </div>
-
                             <button type="button" className="d-inline p-2 ms-1 btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">
                                 Solicitudes
                             </button>
