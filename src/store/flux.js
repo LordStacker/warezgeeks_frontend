@@ -38,7 +38,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                                 access_token: data.access_token,
                                 user: data.user
                             })
-                            history.push('/dash')
+                            history.push('/')
                         }
                         if (typeof data == 'object') {
                             console.log(data)
@@ -89,7 +89,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                 }).then(resp => {
                     if (resp.status === 200) {
                         alert("Account Created")
-                        history.push('/dash/')
+                        history.push('/login')
                         return resp.json();
                     }
                     else alert("There was a mistake")
