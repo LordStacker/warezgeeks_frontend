@@ -3,19 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.10.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+<<<<<<< HEAD
     "bootstrap": "^5.1.2",
     "bootstrap-icons": "^1.5.0",
     "bootswatch": "^5.1.2",
     "jquery": "^3.6.0",
+=======
+    "availability-calendar-react": "^1.0.10",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.5.0",
+    "bootswatch": "^5.1.2",
+    "formik": "^2.2.9",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+>>>>>>> 131c23aa45be583bdc991709d24007ed6a104c5d
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
+    "react-availability-calendar": "^0.3.13",
+    "react-bootstrap": "^2.0.0-rc.0",
+    "react-calendar": "^3.4.0",
     "react-dom": "^17.0.2",
+<<<<<<< HEAD
     "react-popper": "^2.2.5",
     "react-router-dom": "^5.3.0",
     "react-script": "^2.0.5",
+=======
+    "react-router-dom": "^5.3.0",
+>>>>>>> 131c23aa45be583bdc991709d24007ed6a104c5d
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
