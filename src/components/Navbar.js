@@ -4,12 +4,13 @@ import { Context } from "../store/appContext";
 
 const Navbar = () => {
   const history = useHistory();
-  let { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
   const logOut = () => {
     localStorage.clear()
     actions.logOut()
     history.push("/")
   }
+  console.log(store.user)
 
   return (
     <>
@@ -25,13 +26,13 @@ const Navbar = () => {
                 store.isAuth ?
                   <>
                     <li className="nav-item">
-                      <Link className="nav-link active" aria-current="page" to="/dash/">Perfil</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link active" aria-current="page" to="/contact">Contáctanos</Link>
+                      <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link active" aria-current="page" to="/documentation">Documentación</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link active" aria-current="page" to="/contact">Contáctanos</Link>
                     </li>
                     <li className="nav-item logout">
                       <button className="btn btn-primary rounded-pill" onClick={logOut}>Log out</button>

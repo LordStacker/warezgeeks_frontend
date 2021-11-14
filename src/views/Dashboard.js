@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
+
 
 const Dashboard = () => {
-    const [user, setUser] = useState("");
+    const { store, actions } = useContext(Context);
+    const [step, setUser] = useState("");
     useEffect(() => {
         fetch("http://localhost:8080/me", {
             method: "POST",
@@ -19,7 +22,7 @@ const Dashboard = () => {
                 console.error(error);
             })
     }, [])
-    return <h1>Hola {user} history</h1>
+    return <h1>Hola {store.user.username} Bienvenido</h1>
 }
 
 export default Dashboard;

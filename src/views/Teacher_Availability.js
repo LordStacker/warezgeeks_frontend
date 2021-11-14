@@ -14,6 +14,7 @@ const TeacherAvailability = () => {
             actions.saveDate(update)
             console.log(update)
             setAvailability([])
+            
             //setAvailability(availability.concat()) mas de una fecha
             //concatenar arreglos, savedata(availability), [0][0]
 

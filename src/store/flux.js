@@ -38,7 +38,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                                 access_token: data.access_token,
                                 user: data.user
                             })
-                            history.push('/dash')
+                            history.push('/')
                         }
                         if (typeof data == 'object') {
                             console.log(data)
