@@ -10,6 +10,8 @@ import Documentation from "./Documentation";
 import PrivateRoute from "./Privateroute";
 import JumbotronDocs from "./JumbotronDocs";
 import StudentView from "../views/Student_View";
+import PrivateRouteStudent from "./PrivateRouteStudent";
+import PrivateRouteTeacher from "./PrivaterouteTeacher";
 
 
 const Layout = () => {
@@ -31,11 +33,11 @@ const Layout = () => {
         <Route path="/Login">
           <Login />
         </Route>
-        <PrivateRoute path="/teacher/availability" component={() => <TeacherAvailability />} />
+        <PrivateRouteTeacher path="/teacher/availability" component={() => <TeacherAvailability />} />
         <Route path="/Login">
           <Login />
         </Route>
-        <PrivateRoute path="/student/view" component= {() => <StudentView />} />
+        <PrivateRouteStudent path="/student/view" component= {() => <StudentView />} />
         <Route path="/Login">
           <Login />
         </Route>
