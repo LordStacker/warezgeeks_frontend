@@ -3,7 +3,6 @@ import banner from '../img/banner.png';
 import anom from '../img/anom.png';
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-//import Select from 'react-select';
 
 
 const Register = () => {
@@ -13,7 +12,7 @@ const Register = () => {
         last_name: "",
         email: "",
         password: "",
-        knowledge: [],
+        knowledge: "",
         phone: "",
         question: "",
         answer: "",
@@ -26,28 +25,6 @@ const Register = () => {
         setChecked(!checked)
     }
 
-    const optionKnowledge = [
-        { value: 'HTML', label: 'HTML' },
-        { value: 'CSS', label: 'CSS' },
-        { value: 'Bootstrap', label: 'Bootstrap'},
-        { value: 'React', label: 'React'},
-        { value: 'JavaScript', label: 'JavaScript'},
-        { value: 'Python', label: 'Python'}
-    ]
-
-    /*<label htmlFor="knowledge">Conocimientos</label>
-                        <Select
-                            isMulti
-                            className="basic-multi-select"
-                            id="knowledge"
-                            name="knowledge"
-                            placeholder="Seleccione"
-                            options={optionKnowledge}
-                            onChange={(e) => setprofile("knowledge", e)}
-                            checked={!checked}
-                            disabled={checked}
-                            value={profile.knowledge}
-                        />*/
     return (
         <>
             <div className="col-md-12">
@@ -60,15 +37,15 @@ const Register = () => {
                 <div className="col-md-6">
                     <form onSubmit={(e) => actions.onSubmitRegister(e, profile, history)}>
                         <div className="mb-3">
-                            <label for="Name" className="form-label">Name</label>
+                            <label for="Name" className="form-label">Nombre</label>
                             <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="full_name" onChange={HandleChange} value={profile.full_name} />
                         </div>
                         <div className="mb-3">
-                            <label for="Last Name" className="form-label">Last Name</label>
+                            <label for="Last Name" className="form-label">Apellido</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" onChange={HandleChange} name="last_name" value={profile.last_name} />
                         </div>
                         <div className="mb-3">
-                            <label for="Last Name" className="form-label">Username</label>
+                            <label for="Last Name" className="form-label">Usuario</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" onChange={HandleChange} name="username" value={profile.username} />
                         </div>
                         <div className="mb-3">
@@ -81,22 +58,22 @@ const Register = () => {
                                 name="email"
                                 onChange={HandleChange}
                                 value={profile.email} />
-                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                            <div id="emailHelp" className="form-text">Nunca compartiremos tu correo electrónico con terceros.</div>
                         </div>
                         <div className="mb-3">
-                            <label for="Pass" className="form-label">Password</label>
+                            <label for="Pass" className="form-label">Contraseña</label>
                             <input type="password" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password" onChange={HandleChange} value={profile.password} />
                         </div>
                         <div className="mb-3">
-                            <label for="phone" className="form-label">Phone</label>
+                            <label for="phone" className="form-label">Telefono</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" onChange={HandleChange} name="phone" value={profile.phone} />
                         </div>
                         <div className="mb-3">
-                            <label for="Last Name" className="form-label">Question</label>
+                            <label for="Last Name" className="form-label">Pregunta secreta</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" onChange={HandleChange} name="question" value={profile.question} />
                         </div>
                         <div className="mb-3">
-                            <label for="Last Name" className="form-label">Answer</label>
+                            <label for="Last Name" className="form-label">Respuesta</label>
                             <input type="text" className="form-control" id="exampleInputPassword1" onChange={HandleChange} name="answer" value={profile.answer} />
                         </div>
                         <div className="form-check">
@@ -114,37 +91,29 @@ const Register = () => {
                                 checked={!checked}
                                 onChange={HandleChange} />
                             <label className="form-check-label">Quiero registrarme como Profesor</label>
-                            <p></p>
+                            <br />
                         </div>
-                        <div className="dropdown">
-                            <button 
-                            className="btn btn-success dropdown-toggle rounded-pill"
-                            type="button" 
-                            id="dropdownMenuButton1" 
-                            data-bs-toggle="dropdown" 
-                            aria-expanded="false"
-                            onChange={HandleChange}
-                            name="knowledge"
-                            checked={!checked}
-                            disabled={checked}
-                            value={profile.knowledge}
-                            >
-                                Knowledge
-                            </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a className="dropdown-item" href="#">Python</a></li>
-                                <li><a className="dropdown-item" href="#">Java Script</a></li>
-                                <li><a className="dropdown-item" href="#">React</a></li>
-                            </ul>
-                        <p></p>
-
+                        <div className="form-label">
+                            <div className="form-group">
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
+                                    </div>
+                                    <input
+                                        type="knowledge"
+                                        className="form-control"
+                                        name="knowledge"
+                                        placeholder="Conocimientos (solo habilitado para profesor)"
+                                        required="required"
+                                        id="knowledge"
+                                        disabled={checked} />
+                                </div>
+                            </div>
                         </div>
-                        
-
-
-                        <button type="submit" className="btn btn-success rounded-pill">Submit</button>
                     </form>
                 </div>
+            </div>
+            <div className="d-flex justify-content-center">
+                <button type="submit" className="btn btn-success rounded-pill">Enviar</button>
             </div>
         </>
     )
