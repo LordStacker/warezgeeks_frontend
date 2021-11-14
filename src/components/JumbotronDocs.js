@@ -14,7 +14,7 @@ const JumbotronDocs = (props) => {
     }, [])
     return (
         <>
-            <div className="container">
+            <div className="container pt-5">
                 <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">
                     <div className="col-md-6 px-0">
                         <h1 className="fst-italic">{!!store.document && store.document.info}</h1>
