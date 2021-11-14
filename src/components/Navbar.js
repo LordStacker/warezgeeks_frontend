@@ -31,7 +31,7 @@ const Navbar = () => {
                       <Link className="nav-link active" aria-current="page" to="/contact">Contáctanos</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link active" aria-current="page" to="/documentation">Documentacion</Link>
+                      <Link className="nav-link active" aria-current="page" to="/documentation">Documentación</Link>
                     </li>
                     <li className="nav-item logout">
                       <button className="btn btn-primary rounded-pill" onClick={logOut}>Log out</button>
@@ -44,10 +44,10 @@ const Navbar = () => {
                       <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link active" aria-current="page" to="/">Contact Us</Link>
+                      <Link className="nav-link active" aria-current="page" to="/contact">Conáctanos</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link active" aria-current="page" to="/documentation">Documentacion</Link>
+                      <Link className="nav-link active" aria-current="page" to="/documentation">Documentación</Link>
                     </li>
                   </>
               }
