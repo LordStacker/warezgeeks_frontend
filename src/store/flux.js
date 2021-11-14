@@ -83,7 +83,8 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         phone: profile.phone,
                         question: profile.question,
                         answer: profile.answer,
-                        username: profile.username
+                        username: profile.username,
+                        role: profile.role
                     })
                 }).then(resp => {
                     if (resp.status === 200) {

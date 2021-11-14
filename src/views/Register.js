@@ -7,6 +7,8 @@ import { Context } from "../store/appContext";
 
 const Register = () => {
     const { store, actions } = useContext(Context);
+    const [ onTeach, setOnTeach ] = useState(false);
+    const [ onStudent, setOnStudent ] = useState(false);
     const [profile, setprofile] = useState({
         full_name: "",
         last_name: "",
@@ -16,14 +18,17 @@ const Register = () => {
         phone: "",
         question: "",
         answer: "",
-        username: ""
+        username: "",
+        role: ""
     });
-    const [checked, setChecked] = React.useState(false);
+    //const [checked, setChecked] = React.useState(false);setChecked(!checked)
     const history = useHistory();
     const HandleChange = (e) => {
-        setprofile({ ...profile, [e.target.name]: e.target.value });
-        setChecked(!checked)
+        setprofile({ ...profile, [e.target.name]: e.target.value }); 
+       document.getElementById("estudiante").checked ? profile.role="3" : profile.role="2"    
+        console.log(profile)
     }
+
 
     return (
         <>
@@ -78,18 +83,22 @@ const Register = () => {
                         </div>
                         <div className="form-check">
                             <input className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="estudiante" />
+                                type="radio"
+                                name="role"
+                                value=""
+                                id="estudiante"
+                                onChange={HandleChange}
+                            />
                             <label className="form-check-label">Quiero registrarme como Estudiante</label>
                         </div>
                         <div className="form-check">
                             <input className="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
+                                type="radio"
+                                name="role"
+                                value=""
                                 id="profesor"
-                                checked={!checked}
-                                onChange={HandleChange} />
+                                onChange={HandleChange}
+                            />
                             <label className="form-check-label">Quiero registrarme como Profesor</label>
                             <br />
                         </div>
@@ -102,19 +111,19 @@ const Register = () => {
                                         type="knowledge"
                                         className="form-control"
                                         name="knowledge"
-                                        placeholder="Conocimientos (solo habilitado para profesor)"
+                                        placeholder="Conocimientos Opcional"
                                         required="required"
-                                        id="knowledge"
-                                        disabled={checked} />
+                                        id="knowledge" />
                                 </div>
                             </div>
+                        </div>
+                        <div className="d-flex justify-content-center">
+                            <button type="submit" className="btn btn-success rounded-pill">Enviar</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div className="d-flex justify-content-center">
-                <button type="submit" className="btn btn-success rounded-pill">Enviar</button>
-            </div>
+
         </>
     )
 }
