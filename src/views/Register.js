@@ -7,8 +7,6 @@ import { Context } from "../store/appContext";
 
 const Register = () => {
     const { store, actions } = useContext(Context);
-    const [ onTeach, setOnTeach ] = useState(false);
-    const [ onStudent, setOnStudent ] = useState(false);
     const [profile, setprofile] = useState({
         full_name: "",
         last_name: "",
@@ -25,7 +23,7 @@ const Register = () => {
     const history = useHistory();
     const HandleChange = (e) => {
         setprofile({ ...profile, [e.target.name]: e.target.value }); 
-       document.getElementById("estudiante").checked ? profile.role="3" : profile.role="2"    
+        //document.getElementById("estudiante").checked ? profile.role="3" : profile.role="2"    
         console.log(profile)
     }
 
@@ -85,7 +83,7 @@ const Register = () => {
                             <input className="form-check-input"
                                 type="radio"
                                 name="role"
-                                value=""
+                                value="2"
                                 id="estudiante"
                                 onChange={HandleChange}
                             />
@@ -95,8 +93,8 @@ const Register = () => {
                             <input className="form-check-input"
                                 type="radio"
                                 name="role"
-                                value=""
                                 id="profesor"
+                                value="3"
                                 onChange={HandleChange}
                             />
                             <label className="form-check-label">Quiero registrarme como Profesor</label>
@@ -113,7 +111,9 @@ const Register = () => {
                                         name="knowledge"
                                         placeholder="Conocimientos Opcional"
                                         required="required"
-                                        id="knowledge" />
+                                        value={profile.knowledge}
+                                        id="knowledge"
+                                        onChange={HandleChange} />
                                 </div>
                             </div>
                         </div>
