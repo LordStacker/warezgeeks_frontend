@@ -12,6 +12,7 @@ import JumbotronDocs from "./JumbotronDocs";
 import StudentView from "../views/Student_View";
 import PrivateRouteStudent from "./PrivateRouteStudent";
 import PrivateRouteTeacher from "./PrivaterouteTeacher";
+import ContactUs from "./ContactUs";
 
 
 const Layout = () => {
@@ -46,6 +47,9 @@ const Layout = () => {
         </Route>
         <Route path="/documentation">
           <Documentation />
+        </Route>
+        <Route path="/contact">
+          <ContactUs />
         </Route>
 
         <Route render={() => <h1>Not found</h1>}></Route>

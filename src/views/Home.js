@@ -11,7 +11,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="jumbotron container">
-                <h1 className="display-4 d-flex justify-content-center">Hola Geeks!</h1>
+                <h1 className="display-4 d-flex justify-content-center">!Hola Geeks!</h1>
                 <div className="lead d-flex justify-content-center"><p>En Warez Geeks encontraras informacion que te ayudara en tu camino a la programacion 
                     asi como tambien tener la posibilidad de conectarte con mentores con otros Geeks como tu.</p></div>
                 <hr className="my-4" />
