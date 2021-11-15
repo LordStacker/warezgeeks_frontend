@@ -19,7 +19,7 @@ const StudentView = () => {
         },
 
     });
-    const [user, setUser] = useState("");
+   /* const [user, setUser] = useState("");
     useEffect(() => {
         fetch("http://localhost:8080/me", {
             method: "POST",
@@ -36,7 +36,7 @@ const StudentView = () => {
             .catch(error => {
                 console.error(error);
             })
-    }, [])
+    }, [])*/
 
     //const exampleModal = document.getElementById('exampleModal');
     //  exampleModal.addEventListener('show.bs.modal', function (event) {
@@ -62,7 +62,7 @@ const StudentView = () => {
                 <div className="d-flex justify-content-start mt-5">
                     <div className="col-md-3">
                         <img src="http://lorempixel.com/400/200" className="img-thumbnail" alt="..." />
-                        <h5>Nombre {user}</h5>
+                        <h5>Nombre {store.user.username}</h5>
                         <div className="d-flex justify-content-between">
                             <button type="button" className="d-inline p-2 btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="contacto@warezgeeks.cl">Editar Perfil</button>
 

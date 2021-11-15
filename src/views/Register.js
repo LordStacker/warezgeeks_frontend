@@ -83,7 +83,7 @@ const Register = () => {
                             <input className="form-check-input"
                                 type="radio"
                                 name="role"
-                                value="2"
+                                value="3"
                                 id="estudiante"
                                 onChange={HandleChange}
                             />
@@ -94,7 +94,7 @@ const Register = () => {
                                 type="radio"
                                 name="role"
                                 id="profesor"
-                                value="3"
+                                value="2"
                                 onChange={HandleChange}
                             />
                             <label className="form-check-label">Quiero registrarme como Profesor</label>
