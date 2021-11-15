@@ -110,7 +110,6 @@ const StudentView = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" className="d-inline p-2 ms-1 btn btn-danger">Contactanos</button>
                         </div>
                     </div>
                     <div className="col-md-9">
